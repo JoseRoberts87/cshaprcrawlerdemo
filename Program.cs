@@ -11,6 +11,10 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Console.WriteLine("console line is this");
+            HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
+            HtmlAgilityPack.HtmlDocument doc = web.Load("");
+            var HeaderNames = doc.DocumentNode
+                .SelectNodes("").ToList();
             
         }
     }
