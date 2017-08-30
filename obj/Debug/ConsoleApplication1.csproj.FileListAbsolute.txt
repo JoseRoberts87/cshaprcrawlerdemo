@@ -4,3 +4,6 @@ C:\Users\rober\Documents\Visual Studio 2015\Projects\ConsoleApplication1\bin\Deb
 C:\Users\rober\Documents\Visual Studio 2015\Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 C:\Users\rober\Documents\Visual Studio 2015\Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\rober\Documents\Visual Studio 2015\Projects\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\ConsoleApplication1\bin\Debug\HtmlAgilityPack.dll
+C:\Users\rober\Documents\Visual Studio 2015\Projects\ConsoleApplication1\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\rober\Documents\Visual Studio 2015\Projects\ConsoleApplication1\bin\Debug\HtmlAgilityPack.xml
