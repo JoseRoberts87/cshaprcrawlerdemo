@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             SiteCrawler();
+            StoreData();
             Console.WriteLine("finished");
         }
 
@@ -25,6 +27,18 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine(item.InnerHtml);
             }
+        }
+        
+        static void StoreData()
+        {
+            string lines = "save me";
+            string path = Directory.GetCurrentDirectory();
+            string mypath = Environment.CurrentDirectory + @"\ ..";
+            Console.WriteLine(path);
+            Console.WriteLine(mypath);
+            System.IO.StreamWriter file = new System.IO.StreamWriter("C:\\Users\\rober\\Documents\\Visual Studio 2015\\Projects\\ConsoleApplication1\\myfile.txt");
+            file.WriteLine(lines);
+            file.Close();
         }
     }
 }
