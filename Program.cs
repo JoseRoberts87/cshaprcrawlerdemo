@@ -10,16 +10,21 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            SiteCrawler();
+            Console.WriteLine("finished");
+        }
+
+        static void SiteCrawler()
+        {
             Console.WriteLine("console line is this");
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = web.Load("https://www.amazon.com/ROVA-Flying-Selfie-Drone-Camera/dp/B06WVDJYGD");
+            HtmlAgilityPack.HtmlDocument doc = web.Load("https://providence.craigslist.org/search/sss?query=supra&sort=rel");
             var HeaderNames = doc.DocumentNode
-                .SelectNodes("//a[@class='business-name']").ToList();
-            foreach(var item in HeaderNames)
+                .SelectNodes("//a").ToList();
+            foreach (var item in HeaderNames)
             {
                 Console.WriteLine(item.InnerHtml);
             }
-            
         }
     }
 }
