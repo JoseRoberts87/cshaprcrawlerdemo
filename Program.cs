@@ -11,17 +11,20 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            SiteCrawler();
+            Console.WriteLine("enter URL :");
+            string userUrl = Console.ReadLine();
+
+            SiteCrawler(userUrl);
             
             Console.WriteLine("finished");
         }
 
-        static void SiteCrawler()
+        static void SiteCrawler(string url)
         {
             string myLines = "";
             Console.WriteLine("console line is this");
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = web.Load("https://providence.craigslist.org/search/sss?query=supra&sort=rel");
+            HtmlAgilityPack.HtmlDocument doc = web.Load(url);
             var HeaderNames = doc.DocumentNode
                 .SelectNodes("//a").ToList();
             foreach (var item in HeaderNames)
