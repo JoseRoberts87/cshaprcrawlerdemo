@@ -28,18 +28,14 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine(item.InnerHtml);
                 myLines += item.InnerHtml;
-                
             }
             StoreData(myLines);
         }
 
         static void StoreData(string writethis)
         {
-            string lines = "save me";
             string path = Directory.GetCurrentDirectory();
             string mypath = @".. \" + path;
-            //Console.WriteLine(path);
-            //Console.WriteLine(mypath);
             System.IO.StreamWriter file = new System.IO.StreamWriter("C:\\Users\\rober\\Documents\\Visual Studio 2015\\Projects\\ConsoleApplication1\\myfile.txt");
             file.WriteLine(writethis);
             file.Close();
