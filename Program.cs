@@ -13,9 +13,11 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("enter URL :");
             string userUrl = Console.ReadLine();
-
-            SiteCrawler(userUrl);
-            
+            Console.WriteLine("you entered :" + userUrl);
+            if(Console.ReadLine().Equals("Yes", StringComparison.InvariantCultureIgnoreCase))
+            {
+                SiteCrawler(userUrl);
+            }       
             Console.WriteLine("finished");
         }
 
