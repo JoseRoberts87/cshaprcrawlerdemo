@@ -14,23 +14,25 @@ namespace ConsoleApplication1
             Console.WriteLine("enterTicker Symbol: ");
             string userTicker = Console.ReadLine().ToUpper();
             Console.WriteLine("you entered: " + userTicker);
-            if(Console.ReadLine().Equals("No", StringComparison.InvariantCultureIgnoreCase)  || userTicker == null || userTicker == "")
+            string userResponse = Console.ReadLine();
+            if(userResponse.Equals("No", StringComparison.InvariantCultureIgnoreCase)  || userTicker == null || userTicker == "")
             {
-                Console.WriteLine("Program terminated! \npress any key to exit.");
-                Console.ReadLine();
+                Console.WriteLine("Program terminated!");
             }
-            else if(Console.ReadLine().Equals("Yes", StringComparison.InvariantCultureIgnoreCase))
+            else if(userResponse.Equals("Yes", StringComparison.InvariantCultureIgnoreCase))
             {
                 SiteCrawler(userTicker);
             }      
-            Console.WriteLine("finished");
+            Console.WriteLine("finished\npress any key to exit.");
+            Console.ReadLine();
         }
 
         static void SiteCrawler(string ticker)
         {
             string myLines = "";
+            string linkSite = String.Format("https://finance.yahoo.com/quote/{0}?p={0}", ticker);
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = web.Load("https://finance.yahoo.com/quote/GOOG?p=GOOG");
+            HtmlAgilityPack.HtmlDocument doc = web.Load(linkSite);
             var HeaderNames = doc.DocumentNode
                 .SelectNodes("//div[contains(@data-test,'summary-table')]//tr").ToList();
             foreach (var item in HeaderNames)
