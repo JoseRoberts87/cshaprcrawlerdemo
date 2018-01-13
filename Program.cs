@@ -21,7 +21,7 @@ namespace ConsoleApplication1
             }
             else if(userResponse.Equals("Yes", StringComparison.InvariantCultureIgnoreCase))
             {
-                Crawler.SiteCrawler(userTicker);
+                Demo.Crawler.SiteCrawler(userTicker);
             }      
             Console.WriteLine("finished\npress any key to exit.");
             Console.ReadLine();
