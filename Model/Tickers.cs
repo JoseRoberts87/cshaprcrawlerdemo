@@ -17,17 +17,16 @@ namespace ConsoleApplication1.Model
             this.lastPrice = lastPrice;
         }
 
-
         public string TickerName
         {
             get { return tickerName; }
             set
             {
-                if (tickerName == null) return;
+                if (tickerName != value) return;
                 {
                     Console.WriteLine("no ticker provided");
                 }
-                if (tickerName != null) return;
+                if (tickerName == value) return;
                 {
                     tickerName = value;
                     Console.WriteLine("ticker name set to", value);
@@ -39,7 +38,7 @@ namespace ConsoleApplication1.Model
             get { return lastPrice; }
             set
             {
-                if (lastPrice == null) return;
+                if (lastPrice != value) return;
                 {
                     Console.WriteLine("last price not found");
                 }
