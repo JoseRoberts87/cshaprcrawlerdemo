@@ -25,12 +25,11 @@ namespace ConsoleApplication1.Model.Data
 
         static void AddRecord()
         {
-            string sConnectionString = "User ID=<UID>;Initial Catalog=pubs;Data Source=(local)";
+            string sConnectionString = "User ID=<dbo>;Initial Catalog=pubs;Data Source=(local)";
             SqlConnection objConn = new SqlConnection(sConnectionString);
             objConn.Open();
-            string sSQL = "INSERT INTO Ticker " +
-              "(emp_id, fname, minit, lname, job_id, job_lvl, pub_id, hire_date) " +
-                      "VALUES ('MSD12923F', 'Duncan', 'W', 'Mackenzie', 10, 82,'0877','2001-01-01')";
+            string sSQL = "INSERT INTO symbols " +
+              "(tikername) " + "VALUES ('AAPL')";
             SqlCommand objCmd = new SqlCommand(sSQL, objConn);
             try
             {
@@ -45,13 +44,13 @@ namespace ConsoleApplication1.Model.Data
 
         static void RemoveRecord()
         {
-            string sConnectionString = "User ID=<UID>;Initial Catalog=pubs;Data Source=(local)";
+            string sConnectionString = "User ID=<dbo>;Initial Catalog=pubs;Data Source=(local)";
             SqlConnection objConn = new SqlConnection(sConnectionString);
             objConn.Open();
-            string sSQL = "DELETE FROM Employee WHERE emp_id = @emp_id";
+            string sSQL = "DELETE FROM symbols WHERE tickername = AAPL";
             SqlCommand objCmd = new SqlCommand(sSQL, objConn);
-            objCmd.Parameters.Add("@emp_id", SqlDbType.Char, 9);
-            objCmd.Parameters["@emp_id"].Value = "MSD12923F";
+            objCmd.Parameters.Add("@tickername", SqlDbType.Char, 4);
+            objCmd.Parameters["@tickername"].Value = "AAPL";
             try
             {
                 objCmd.ExecuteNonQuery();

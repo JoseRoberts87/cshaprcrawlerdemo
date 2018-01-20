@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Demo\Crawler.cs" />
+    <Compile Include="Model\Data\ScraperDAO.cs" />
     <Compile Include="Model\StockData.cs" />
     <Compile Include="Model\Tickers.cs" />
     <Compile Include="Program.cs" />
